@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cosas del corazón: literatura, papelería, regalos y sets literarios para quienes aman las historias."
+    />
+    <title>Cosas del corazón | Literatura y regalos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+    <!-- Modal de Registro e Inicio de Sesión -->
+<dialog id="modal-registro" class="modal-visor modal-usuario">
+  <div class="contenido-modal-usuario" style="background: white; padding: 2rem; border-radius: 1.5rem; max-width: 400px; width: 90%; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+    
+    <!-- Botón para cerrar la ventana -->
+    <button id="cerrar-modal-registro" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #725261;">&times;</button>
+    
+    <h3 style="color: #725261; text-align: center; margin-bottom: 1rem; font-family: inherit;">Mi Cuenta - Cosas del Corazón</h3>
+    <p style="text-align: center; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem;">Regístrate o inicia sesión para disfrutar de la tienda.</p>
+
+    <!-- Formulario de Autenticación -->
+    <form id="form-registro-usuario" style="display: flex; flex-direction: column; gap: 1rem;">
+      <input 
+        type="email" 
+        id="usuario-email" 
+        placeholder="Correo electrónico" 
+        required 
+        style="padding: 0.7rem 1rem; border: 1px solid #e0c2cb; border-radius: 2rem; outline: none; font-size: 0.9rem;"
+      >
+      <input 
+        type="password" 
+        id="usuario-password" 
+        placeholder="Contraseña" 
+        required 
+        style="padding: 0.7rem 1rem; border: 1px solid #e0c2cb; border-radius: 2rem; outline: none; font-size: 0.9rem;"
+      >
+      <button 
+        type="submit" 
+        id="btn-enviar-usuario"
+        style="padding: 0.7rem; border: none; border-radius: 2rem; background: #c27d91; color: white; font-weight: bold; cursor: pointer; transition: background 0.3s;"
+      >
+        Ingresar / Registrarse
+      </button>
+    </form>
+  </div>
+</dialog>
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+      <div style="position: absolute; top: 20px; right: 30px; display: flex; gap: 15px; align-items: center; z-index: 100;">
+  <a href="#" id="btn-abrir-carrito" style="color: white; font-size: 1.5rem; text-decoration: none;">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </a>
+  <a href="#" id="btn-abrir-registro" style="color: white; font-size: 1.5rem; text-decoration: none;">
+    <i class="fa-solid fa-user"></i>
+  </a>
+</div>
+      <div class="marca contenedor">
+        <!-- Sustituir este espacio por el logo cuando esté disponible. -->
+        <!-- <div class="logo-provisional" aria-hidden="true">CDC</div>-->
+        <img
+          class="logo-oficial"
+          src="img/CDClogo.png"
+          alt="Portada de El fantasma de la ópera"
+        />
+        <h1>Cosas del corazón</h1>
+      </div>
+      <nav class="menu-principal contenedor" aria-label="Navegación principal">
+        <a href="#inicio" class="btn-menu">Inicio</a>
+        <details class="dropdown">
+          <summary class="btn-menu">Categorías</summary>
+          <div class="dropdown-content">
+            <a href="#novelas">Novelas & Fantasía</a>
+            <a href="#papeleria">Papelería & Accesorios</a>
+            <a href="#detalles">Detalles & Regalitos</a>
+          </div>
+        </details>
+        <a href="#sets" class="btn-menu">Sets literarios</a>
+        <a href="#especiales" class="btn-menu">Especiales</a>
+        <a href="#giftcard" class="btn-menu">GiftCard</a>
+        <a href="#club" class="btn-menu">Club de lectura</a>
+      </nav>
+    </header>
+    <main id="contenido" class="contenedor">
+      <section
+        id="inicio"
+        class="inicio seccion"
+        aria-labelledby="titulo-inicio"
+      >
+        <video class="video-provisional" autoplay loop muted controls>
+          <source src="video/Miss.mp4" type="video/mp4" />
+          Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="bienvenida">
+          <p class="etiqueta">Historias que nos unen</p>
+          <h2 id="titulo-inicio">Las mejores letras del corazón</h2>
+          <p>
+            Hola. Somos un grupo humano apasionado, como tú, por los clásicos de
+            la literatura, las historias dulces y eternas, y los detalles que
+            acompañan esos momentos que roban el aliento. Disfruta tu visita. Atentamente:
+          </p>
+          <p class="firma">Cosas del corazón</p>
+          <a href="#categorias" class="boton">Descubrir productos</a>
+        </div>
+        <aside class="panel-club" aria-labelledby="titulo-club-resumen">
+          <h2 id="titulo-club-resumen">
+            La sociedad del romance y la fantasía
+          </h2>
+          <!-- Bootstrap gestiona las diapositivas; el CSS adapta la transición al eje vertical. -->
+          <div
+            id="carrusel-club"
+            class="carousel slide carrusel-vertical"
+            role="region"
+            aria-roledescription="carrusel"
+            aria-label="Selección del club"
+            data-bs-ride="carousel"
+            data-bs-interval="3000"
+            data-bs-pause="hover"
+            data-bs-touch="false"
+          >
+            <div class="carousel-inner" aria-live="off">
+              <div
+                class="carousel-item active"
+                role="group"
+                aria-roledescription="diapositiva"
+                aria-label="1 de 3"
+              >
+                <div class="club-diapositiva">
+                  <!--<h3>Autor del mes</h3>-->
+                  <img
+                    class="club-portada"
+                    src="img/Carrusel01/G02.png"
+                    alt="Portada de El fantasma de la ópera"
+                  />
+                  <!--<p>Gaston Leroux</p>-->
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                role="group"
+                aria-roledescription="diapositiva"
+                aria-label="2 de 3"
+              >
+                <div class="club-diapositiva">
+                  <!--<h3>Libro del mes</h3>-->
+                  <img
+                    class="club-portada"
+                    src="img/Carrusel01/F03.png"
+                    alt="Portada de El fantasma de la ópera"
+                  />
+                  <!--<p>El fantasma de la ópera</p>-->
+                </div>
+              </div>
+              <div
+                class="carousel-item"
+                role="group"
+                aria-roledescription="diapositiva"
+                aria-label="3 de 3"
+              >
+                <div class="club-diapositiva">
+                  <!--<h3>Selección del club</h3>-->
+                  <img
+                    class="club-portada"
+                    src="img/Carrusel01/E04.png"
+                    alt="Portada de El fantasma de la ópera"
+                  />
+                  <!--<p>Descubre los detalles que acompañan nuestra lectura.</p>-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#club" class="boton boton-claro">Conocer el club</a>
+        </aside>
+      </section>
+      <section
+        id="categorias"
+        class="seccion categorias"
+        aria-labelledby="titulo-categorias"
+      >
+        <p class="etiqueta">Nuestro universo</p>
+        <h2 id="titulo-categorias">Nuestros productos</h2>
+        <div class="enlaces-categorias">
+          <a href="#novelas">Novelas & Fantasía</a>
+          <a href="#papeleria">Papelería & Accesorios</a>
+          <a href="#detalles">Detalles & Regalitos</a>
+        </div>
+      </section>
+
+      <section id="novelas" class="seccion" aria-labelledby="titulo-novelas">
+        <header class="encabezado-seccion">
+          <h2 id="titulo-novelas">Novelas & Fantasía</h2>
+          <p>Clásicos e historias para descubrir.</p>
+        </header>
+        <div class="contenedor-productos">
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/GM01.png"
+              alt="Juvenal y Laura"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"Juvenal y Laura: El arte de escapar juntos"</h3>
+            <p>Autor: Gerusa Melk</p>
+            <p>Tapa blanda</p>
+            <p class="precio">S/ 85.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/LT01.png"
+              alt="Guerra y Paz"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"Guerra y Paz" Estuche Vol I y Vol II</h3>
+            <p>Autor: León Tolstoi</p>
+            <p>Edición especial bicentenario</p>
+            <p class="precio">S/ 200.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/rojoynegro.png"
+              alt="Rojo y Negro"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"Rojo y Negro"</h3>
+            <p>Autor:Stendhal</p>
+            <p>Edición especial de colección</p>
+
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/ivanhoe.png"
+              alt="Ivanhoe"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"Ivanhoe" Edición Especial</h3>
+            <p>Autor: Sir Walter Scott Tapa dura en cuero labrado.</p>
+            <p> Tapa dura en cuero labrado.</p>
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/NS.png"
+              alt="Norte y sur"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"North and South" Edición Especial</h3>
+            <p> Autor: Elizabeth Gaskell </p>
+            </p> Tapa dura  collar dije a juego.</p>
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+            <img
+              src="img/Novelas y fantasia/MMB.png"
+              alt="Madamme Bovary"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem"
+            />
+            <h3>"Madame Bovary" Edición Especial</h3>
+            <p>Autor: Gustave Flaubert </p>
+            <p> Incluye  collar dije a juego</p>
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+            <img src="img/Novelas y fantasia/RDM.png"
+              alt="Retrato de una dama"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+            
+            <h3>"The Portrait of a Lady" Edición Especial</h3>
+            <p>Autor: Henry James </p>
+            <p>Tapa dura con collar dije a juego.</p>
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+             <img src="img/Novelas y fantasia/F01.jpeg"
+              alt="Frankenstein"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+            <h3>"Frankenstein" Edición Especial</h3>
+            <p>Autor: Mary Shelley </p>
+            <p>Tapa dura con relieves en plata </p>
+            <p class="precio">S/ 95.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+              <img src="img/Novelas y fantasia/Opera.png"
+              alt="El fantasma de la ópera"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+            <h3>El fantasma de la ópera"</h3>
+            <p>Autor: Gaston Leroux</p>
+            <p>Incluye estuche rígido de colección</p>
+            <p class="precio">S/ 100.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+          <img src="img/Novelas y fantasia/ELMA.png"
+              alt="Sentido y Sensibilidad"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+          <h3>"Sentido y Sensibilidad"</h3>
+          <p>Autor: Jane Austen</p>
+          <p>Tapa dura con decoración floral</p>
+          <p class="precio">S/ 100.00</p>
+                <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+          <img src="img/Novelas y fantasia/GM02.png"
+              alt="Nicolás y Gwenevere: Lo que la razón no entiende"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+              <h3>"Nicolás y Gwenevere: Lo que la razón no entiende"</h3>
+              <p>Autor: Gerusa Melk</p>
+              <p>Tapa blanda</p>
+              <p class="precio">S/ 90.00</p>
+              <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+          <img src="img/Novelas y fantasia/BRIDE02.jpg"
+              alt="Always a Bridesmaid"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+              <h3>"Always a Bridesmaid"</h3>
+              <p>Autor: Lindsey Kelk</p>
+              <p>Tapa blanda</p>
+              <p class="precio">S/ 90.00</p>
+              <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+
+      <article class="card">
+  <img src="img/Novelas y fantasia/JANE.jpg"
+    alt="Jane Austen Obras Completas"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Jane Austen Obras Completas"</h3>
+  <p>Autor: Jane Austen</p>
+  <p>Tapa dura</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+      </article>
+
+      <article class="card">
+  <img src="img/Novelas y fantasia/BRIDE 01.jpg"
+    alt="Bad Bridesmaid"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Bad Bridesmaid"</h3>
+  <p>Autor: Gillian Harvey</p>
+  <p>Tapa blanda</p>
+  <p class="precio">S/ 90.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+      </article>
+      <article class="card">
+  <img src="img/Novelas y fantasia/LM02.jpeg"
+    alt="Las mil noches y una noche Vol I y II"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Las mil noches y una noche Vol II"</h3>
+  <p>Autor: Anónimo</p>
+  <p>Tapa dura con mosaicos azules y dorados</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+      </article>
+
+      <article class="card">
+  <img src="img/Novelas y fantasia/POE04.png"
+    alt="Cuentos Extraordinarios"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Cuentos Extraordinarios"</h3>
+  <p>Autor: Edgar Allan Poe</p>
+  <p>Tapa dura con relieves plateados</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+  </article>
+  <article class="card">
+  <img src="img/Novelas y fantasia/JE01.jpeg"
+    alt="Jane Eyre"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Jane Eyre"</h3>
+  <p>Autor: Charlotte Brontë</p>
+  <p>Tapa dura con relieves en plata y detalles florales</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+      </article>
+
+      <article class="card">
+  <img src="img/Novelas y fantasia/SHERLOCK.png"
+    alt="Sherlock Holmes: Edición de Coleccionista"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Sherlock Holmes: Edición de Coleccionista"</h3>
+  <p>Autor: Sir Arthur Conan Doyle</p>
+  <p>Tapa dura con detalles dorados</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+   <img src="img/Novelas y fantasia/DORIANWIL.png"
+    alt="El Retrato de Dorian Gray"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"El Retrato de Dorian Gray"</h3>
+  <p>Autor: Oscar Wilde</p>
+  <p>Tapa dura con filigrana dorada</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/Novelas y fantasia/ELLIOT.jpg"
+    alt="Persuasión"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Persuasión"</h3>
+  <p>Autor: Jane Austen</p>
+  <p>Tapa dura</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+        </div>
+      </section>
+      <section
+        id="papeleria"
+        class="seccion"
+        aria-labelledby="titulo-papeleria"
+      >
+        <header class="encabezado-seccion">
+          <h2 id="titulo-papeleria">Papelería & Accesorios</h2>
+          <p>Detalles que acompañan tus momentos de lectura.</p>
+        </header>
+        <div class="contenedor-productos">
+          <article class="card">
+  <img src="img/papeleria y accesorios/MALETITANOTES.png"
+    alt="Porta post-it victoriano"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Porta post-it victoriano"</h3>
+  <p>Minimaleta rígida en cuero azul/granate con compartimentos para notas</p>
+  <p class="precio">S/ 55.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/AIRHEART.png"
+    alt="Estuche para AirPods"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Estuche para AirPods"</h3>
+  <p>Disponible en cuero café/blanco con detalles dorados</p>
+  <p class="precio">S/ 60.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/airpodsesp.jpeg"
+    alt="Estuche de viaje Sherlock"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Estuche de viaje Sherlock"</h3>
+  <p>Caja rígida en cuero con detalles en pan de oro</p>
+  <p class="precio">S/ 65.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/BUGBOX.jpg"
+    alt="Cajita multifuncional BUG"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Cajita multifuncional BUG"</h3>
+  <p>Caja rígida en imitación de oro, ideal para guardar accesorios pequeños</p>
+  <p class="precio">S/ 55.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+            <article class="card">
+  <img src="img/papeleria y accesorios/estucheholmes.jpg"
+    alt="Kit para lentes Sherlock"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Kit para lentes Sherlock"</h3>
+  <p>Silicona rígida, incluye pañito y atomizador de limpieza</p>
+  <p class="precio">S/ 40.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/ANNE01.jpg"
+    alt="Kit para lentes Avonlea"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Kit para lentes Avonlea"</h3>
+  <p>Cuero verde, incluye pañito y atomizador de limpieza</p>
+  <p class="precio">S/ 40.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/W03.png"
+    alt="Kit para lentes O. Wilde"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Kit para lentes O. Wilde"</h3>
+  <p>Cuero negro, incluye pañito y atomizador de limpieza</p>
+  <p class="precio">S/ 40.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/CALENAUS.jpg"
+    alt="Calendario Perpetuo Jane"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Calendario Perpetuo Jane"</h3>
+  <p>Mármol rosa con detalles en pan de oro</p>
+  <p class="precio">S/ 80.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/calendarioSherlock.jpg"
+    alt="Calendario Perpetuo Sherlock"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Calendario Perpetuo Sherlock"</h3>
+  <p>Mármol negro con detalles en pan de oro</p>
+  <p class="precio">S/ 80.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/IVA01.png"
+    alt="Calendario Perpetuo Ivanhoe"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Calendario Perpetuo Ivanhoe"</h3>
+  <p>Tallado en cedro con detalles de acero</p>
+  <p class="precio">S/ 90.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+  </article>
+  <article class="card">
+  <img src="img/papeleria y accesorios/CALFAN.jpg"
+    alt="Calendario Perpetuo Erick & Cristine"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Calendario Perpetuo Erick & Cristine"</h3>
+  <p>Cedro tallado con detalles modelados en acero</p>
+  <p class="precio">S/ 120.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/LM01.jpeg"
+    alt="Calendario Perpetuo Sheherezade"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Calendario Perpetuo Sheherezade"</h3>
+  <p>Roble blanco con detalles modelados en acero</p>
+  <p class="precio">S/ 120.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/ORGCDC.png"
+    alt="Organizador de escritorio CDC"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Organizador de escritorio CDC"</h3>
+  <p>Estructura rígida en madera rosa/oscuro con detalles dorados</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/ORGFRAN.jpeg"
+    alt="Organizador de escritorio Frankenstein"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Organizador de escritorio Frankenstein"</h3>
+  <p>Acero envejecido con aplicaciones de bronce y vidrio</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/ORGJA.jpg"
+    alt="Organizador de escritorio Jane"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Organizador de escritorio Jane"</h3>
+  <p>Roble rosado tallado con aplicaciones de acero</p>
+  <p class="precio">S/ 130.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/ORGPOE.png"
+    alt="Organizador de escritorio Poe"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Organizador de escritorio Poe"</h3>
+  <p>Roble chocolate tallado con aplicaciones de acero</p>
+  <p class="precio">S/ 130.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/ORGDICK.jpg"
+    alt="Organizador de escritorio Dickens"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Organizador de escritorio Dickens"</h3>
+  <p>Roble blanco tallado con aplicaciones de acero</p>
+  <p class="precio">S/ 130.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/GELrecargable.png"
+    alt="Set de frascos Clásicos románticos"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Set Clásicos románticos"</h3>
+  <p>Frascos recargables para alcohol en gel (45 ml) · Aluminio quirúrgico</p>
+  <p class="precio">S/ 80.00 · Venta por unidad S/ 10.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+<article class="card">
+  <img src="img/papeleria y accesorios/CDCDOCUS.jpg"
+    alt="Porta documentos CDC"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Porta documentos CDC"</h3>
+  <p>Estructura rígida en cuero · Disponible en rosa, gris, negro y chocolate</p>
+  <p class="precio">S/ 30.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/papeleria y accesorios/MUJERCITASDIJES.jpg"
+    alt="Set de llaveros Mujercitas"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>"Set de llaveros Mujercitas"</h3>
+  <p>Colección de charms bañado en oro. Inspirados en la clasica novela</p>
+  <p class="precio">S/ 70.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+        </div>
+      </section>
+      <section id="detalles" class="seccion" aria-labelledby="titulo-detalles">
+        <header class="encabezado-seccion">
+          <h2 id="titulo-detalles">Detalles & Regalitos</h2>
+          <p>Pequeños regalos inspirados en grandes historias.</p>
+        </header>
+        <div class="contenedor-productos">
+          <article class="card">
+            <img src="img/Detalles y regalitos/Perumes/ANNE.jpeg"
+              alt="Anne – El Encanto de Avonlea"
+              class="producto-media"
+              style="width: 100%; object-fit: cover; border-radius: 1rem" />
+            <h3>Anne – El Encanto de Avonlea</h3>
+            <p>Perfume de 90 ml. Fragancia fresca e inocente con notas de flor de manzano, té verde y violetas silvestres.</p>
+            <p class="precio">S/ 175.00</p>
+            <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+        <img src="img/Detalles y regalitos/Perumes/dorian.jpg"
+          alt="Dorian – El Retrato de la Juventud Eterna"
+          class="producto-media"
+          style="width: 100%; object-fit: cover; border-radius: 1rem" />
+        <h3>Dorian – El Retrato de la Juventud Eterna</h3>
+        <p>Perfume de 90 ml. Aroma intenso y misterioso con notas de bergamota, pimienta negra, madera de cedro y toque de vainilla árabe.</p>
+        <p class="precio">S/ 185.00</p>
+        <button type="button" disabled>Comprar · próximamente</button>
+        </article>
+          <article class="card">
+        <img src="img/Detalles y regalitos/Perumes/JA05.png"
+          alt="Lady Darcy – La Esencia de la Elegancia Regency"
+          class="producto-media"
+          style="width: 100%; object-fit: cover; border-radius: 1rem" />
+        <h3>Lady Darcy – Elegancia Regency</h3>
+        <p>Perfume de 90 ml. Fragancia floral y delicada con notas de jazmín blanco, rosas de mayo, melocotón y fondo de ámbar suave.</p>
+        <p class="precio">S/ 190.00</p>
+        <button type="button" disabled>Comprar · próximamente</button>
+          </article>
+          <article class="card">
+          <img src="img/Detalles y regalitos/Perumes/JA06.png"
+            alt="Fitzwilliam Darcy – La Distinción del Caballero"
+            class="producto-media"
+            style="width: 100%; object-fit: cover; border-radius: 1rem" />
+          <h3>Fitzwilliam Darcy – Distinción del Caballero</h3>
+          <p>Perfume de 90 ml. Esencia elegante y sobria con notas de cuero fino, sándalo, cardamomo y matices de té negro ahumado.</p>
+          <p class="precio">S/ 195.00</p>
+          <button type="button" disabled>Comprar · próximamente</button>
+        </article>
+        <article class="card">
+          <img src="img/Detalles y regalitos/Perumes/JA07.jpg"
+            alt="Pemberley Rose – El Suspiro de Derbyshire"
+            class="producto-media"
+            style="width: 100%; object-fit: cover; border-radius: 1rem" />
+          <h3>Pemberley Rose – Suspiro de Derbyshire</h3>
+          <p>Perfume de 90 ml. Fragancia delicada con notas de peonía silvestre, rosas de jardín inglés, pera dulce y fondo suave de almizcle blanco.</p>
+          <p class="precio">S/ 180.00</p>
+          <button type="button" disabled>Comprar · próximamente</button>
+        </article>
+        <article class="card">
+          <img src="img/Detalles y regalitos/Perumes/karenina smell.png"
+            alt="Anna Karenina – La Pasión Imperial"
+            class="producto-media"
+            style="width: 100%; object-fit: cover; border-radius: 1rem" />
+          <h3>Anna Karenina – Pasión Imperial</h3>
+          <p>Perfume de 90 ml. Presentado en cofre estilo huevo Fabergé. Aroma sofisticado con notas de violetas de invierno, ciruela madura, incienso y ámbar imperial.</p>
+          <p class="precio">S/ 195.00</p>
+          <button type="button" disabled>Comprar · próximamente</button>
+        </article>
+        <article class="card">
+  <img src="img/Detalles y regalitos/Perumes/LM03.jpeg"
+    alt="Shahrazad – Leyendas de Oriente"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Shahrazad – Leyendas de Oriente</h3>
+  <p>Perfume de 90 ml. Incluye atomizador de viaje. Fragancia envolvente con notas de flor de azahar, canela fina, mirra y vainilla especiada.</p>
+  <p class="precio">S/ 185.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/Perumes/MISTERIUS.jpeg"
+    alt="Mysterious – El Enigma de Baker Street"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Mysterious – Enigma de Baker Street</h3>
+  <p>Perfume de 90 ml. Aroma enigmático y elegante con notas de tabaco rubio, cuero noble, bergamota ahumada y acordes de madera de roble.</p>
+  <p class="precio">S/ 190.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/Perumes/yliana.jpg"
+    alt="Relatos de la Colina del Sauce – Romance Victoriano"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Relatos de la Colina del Sauce – Romance Victoriano</h3>
+  <p>Perfume de 90 ml. Presentado en alhajero vintage en forma de corazón. Fragancia dulce y romántica con notas de frambuesa silvestre, pétalos de peonía, vainilla cremosa y fondo de almizcle rosado.</p>
+  <p class="precio">S/ 185.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/Perumes/V02.png"
+    alt="Esencia Real – Secretos de la Serpiente"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Esencia Real – Secretos de la Serpiente</h3>
+  <p>Perfume de 90 ml. Presentación mística con emblema plateado. Aroma fresco y enigmático con notas de té verde, bergamota, lirio del valle, eucalipto sutil y acordes de musgo de roble.</p>
+  <p class="precio">S/ 180.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/CAJITAS MUSICALES Y JOYEROS/GP03.jpeg"
+    alt="Joyero musical Guerra y Paz"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Joyero musical "Guerra y Paz"</h3>
+  <p>Tallado en roble con compartimientos de terciopelo y figuras en relieve del gran baile imperial.</p>
+  <p class="precio">S/ 120.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<!-- cajitaelinor: Sentido y sensibilidad -->
+<article class="card">
+  <img src="img/Detalles y regalitos/CAJITAS MUSICALES Y JOYEROS/cajitaelinor.jpeg"
+    alt="Joyero musical Sentido y sensibilidad"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Joyero musical "Sentido y sensibilidad"</h3>
+  <p>Inspirado en la obra de Jane Austen. Tallado artesanal con interior acolchado en terciopelo y figuras danzantes.</p>
+  <p class="precio">S/ 120.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/CAJITAS MUSICALES Y JOYEROS/Cajita opera.png"
+    alt="Cajita musical recargable El fantasma de la Ópera"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Cajita musical recargable "El fantasma de la Ópera"</h3>
+  <p>Tallada en palo negro africano con apliques de acero y mecanismo musical recargable de alta fidelidad.</p>
+  <p class="precio">S/ 150.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/CAJITAS MUSICALES Y JOYEROS/NSCOLLAR.png"
+    alt="Pack Collares dúo Norte y Sur"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Pack Collares dúo "Norte y Sur"</h3>
+  <p>Juego de dijes complementarios en técnica de repujado con baño de oro. Incluye estuche de lujo con forma de libro clásico.</p>
+  <p class="precio">S/ 130.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/MujercitasHouse.jpg"
+    alt="Casita en miniatura Mujercitas"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Casita en miniatura "Mujercitas"</h3>
+  <p>Detallada casa en miniatura elaborada en cerámica al frío. Incluye figuras coleccionables de Beth, Jo, Amy y Meg.</p>
+  <p class="precio">S/ 110.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/snow ball principe y lady.jpg"
+    alt="Snow globe musical Rugido de la corona"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Snow globe musical "Rugido de la corona"</h3>
+  <p>Esfera de nieve musical con base tallada en cerámica al frío y detalles en mármol sintético.</p>
+  <p class="precio">S/ 80.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/snow ball gatos.jpg"
+    alt="Snow globe musical Los gatos de la corona estelar"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Snow globe musical "Los gatos de la corona estelar"</h3>
+  <p>Encantadora esfera musical con diseño de gatos cortesanos. Elaborada con base de cerámica al frío y acabado en mármol.</p>
+  <p class="precio">S/ 80.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/snowballdarcy.jpeg"
+    alt="Snow globe musical Orgullo y prejuicio"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Snow globe musical "Orgullo y prejuicio"</h3>
+  <p>Inspirada en el clásico de Jane Austen. Esfera de nieve musical con base de cerámica al frío con textura de mármol.</p>
+  <p class="precio">S/ 80.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/eterea.jpg"
+    alt="Snow globe musical Las Crónicas de Etérea y el Reino Olvidado"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Snow globe musical "Las Crónicas de Etérea y el Reino Olvidado"</h3>
+  <p>Mundo mágico en miniatura con castillo flotante y bosque bioluminiscente. Base de madera de nogal con placa dorada e iluminación LED interior.</p>
+  <p class="precio">S/ 85.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Detalles y regalitos/SNOWBALLS/los gatiros maestros.jpg"
+    alt="Peluches coleccionables Los gatos de la corona estelar"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Peluches coleccionables "Los gatos de la corona estelar"</h3>
+  <p>Confeccionados en suaveina de alta calidad. Trío de gatos músicos ("Gaspar", "Mario" y "Killo") presentados en maletín de exhibición vintage con detalles astronómicos.</p>
+  <p class="precio">S/ 100.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+        </div>
+      </section>
+      <section id="sets" class="seccion" aria-labelledby="titulo-sets">
+        <header class="encabezado-seccion">
+          <h2 id="titulo-sets">Sets literarios</h2>
+          <p>Historias y detalles reunidos en una colección especial.</p>
+        </header>
+        <div class="contenedor-productos">
+          <article class="card">
+  <img src="img/SETS/Set SherlokH..jpg"
+    alt="Book set Sherlock Holmes - Sir Arthur Conan Doyle"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Sherlock Holmes"</h3>
+  <p>Edición Colección Deluxe en tapa dura con detalles grabados y lomo decorativo. Autor: Sir Arthur Conan Doyle.</p>
+  <p class="precio">S/ 200.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/tom mcnice box set.png"
+    alt="Book set El rugido de la corona - Tom Mcnice"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "El rugido de la corona"</h3>
+  <p>Colección Deluxe de 4 tomos en tapa dura con ilustraciones y cantos decorados. Autor: Tom Mcnice.</p>
+  <p class="precio">S/ 170.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/sujey y sus libros.jpg"
+    alt="Book set Las crónicas de Etérea y el Reino Olvidado - Sujey Yliana"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set Las crónicas de Etérea y el Reino Olvidado</h3>
+  <p>Encuadernación rígida con paleta pastel y bordes ornamentados. Autora: Sujey Yliana.</p>
+  <p class="precio">S/ 150.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/set romance variado.jpg"
+    alt="Book set Clásicos románticos"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Clásicos románticos"</h3>
+  <p>Estuche rígido de lujo con acabados dorados e iluminación de exhibición interior. Colección de novelas románticas clásicas de autores varios.</p>
+  <p class="precio">S/ 260.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/colección thomas hardy.jpg"
+    alt="Book set Sentimientos en Azul - Thomas Hardy"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Sentimientos en Azul"</h3>
+  <p>Colección Deluxe de tapa dura en tonos azul noche y filigrana dorada con marcapáginas de joya. Autor: Thomas Hardy.</p>
+  <p class="precio">S/ 250.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/colección vampiros..png"
+    alt="Book set Colección Vampiros"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Colección Vampiros"</h3>
+  <p>Edición con diseño victoriano gótico en tapa dura borgoña. Incluye clásicos como *Drácula*, *Carmilla* y *El Vampiro*. Autores varios.</p>
+  <p class="precio">S/ 160.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/Dickens set.png"
+    alt="Book set Dickens en Londres - Charles Dickens"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Dickens en Londres"</h3>
+  <p>Edición en tapa dura con acabado vintage. Incluye cofre decorativo de exhibición y souvenirs temáticos. Autor: Charles Dickens.</p>
+  <p class="precio">S/ 130.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/Jane Austen NUDE.jpg"
+    alt="Book set Señorita Austen - Jane Austen"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Señorita Austen"</h3>
+  <p>Colección completa en estructura de cuero rígido rosa con marcapáginas de dijes dorados. Autora: Jane Austen.</p>
+  <p class="precio">S/ 320.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/LeonTolstoi.png"
+    alt="Book set Pasión por Rusia - León Tolstoi"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Pasión por Rusia"</h3>
+  <p>Edición Colección Deluxe en tapa dura turquesa con acabados dorados. Incluye grandes obras como *Guerra y Paz* y *Anna Karénina*. Autor: León Tolstoi.</p>
+  <p class="precio">S/ 220.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/literatura francesa.png"
+    alt="Book set Clásicos románticos de Francia"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Clásicos románticos de Francia"</h3>
+  <p>Colección Deluxe en tapa dura crema y oro. Incluye obras maestras de la literatura francesa de autores como Victor Hugo y Alexandre Dumas.</p>
+  <p class="precio">S/ 240.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/los gatos de la corona estelar.jpg"
+    alt="Book set Los gatos de la corona Estelar - Tom Mcnice"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Los gatos de la corona Estelar"</h3>
+  <p>Edición Colección Deluxe de lujo con estuche ilustrado, tomos en tapa dura y esfera de nieve temática. Autor: Tom Mcnice.</p>
+  <p class="precio">S/ 280.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/Oscar Wilde.png"
+    alt="Book set Obras Selectas de Oscar Wilde"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Obras Selectas de Oscar Wilde"</h3>
+  <p>Edición Colección Deluxe en encuadernación de lujo con estuche protector. Incluye *El retrato de Dorian Gray*, *De Profundis* y cuentos clásicos. Autor: Oscar Wilde.</p>
+  <p class="precio">S/ 200.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/PACK ELI.png"
+    alt="Book set Obras Selectas de Elizabeth Gaskell"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Obras Selectas de Elizabeth Gaskell"</h3>
+  <p>Colección Deluxe en tapa dura con lomos florales en tonos pastel. Incluye obras como *Norte y Sur* y *Esposas y Hijas*. Autora: Elizabeth Gaskell.</p>
+  <p class="precio">S/ 250.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/PACKAUS02.png"
+    alt="Book set Bicentenario natalicio de Jane Austen"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Bicentenario natalicio de Jane Austen"</h3>
+  <p>Edición de lujo con decoración texturizada en relieve dorado y estuche de calado floral. Autora: Jane Austen.</p>
+  <p class="precio">S/ 300.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/set anne tejas verdes.png"
+    alt="Book set Anne de Tejas Verdes"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Anne de Tejas Verdes"</h3>
+  <p>Colección Deluxe completa en tapa dura verde sage con ilustraciones vintage, dijes de bronce y estuche rígido decorado. Autora: Lucy Maud Montgomery.</p>
+  <p class="precio">S/ 350.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/SETS/set bronte.jpg"
+    alt="Book set Romance - Brontë"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Book set "Romance - Brontë"</h3>
+  <p>Colección Deluxe en tapa dura con detalles victorianos en filigrana y marcapáginas con relicarios. Autoras: Charlotte, Emily y Anne Brontë.</p>
+  <p class="precio">S/ 320.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+        </div>
+      </section>
+      <section
+        id="especiales"
+        class="seccion"
+        aria-labelledby="titulo-especiales"
+      >
+        <header class="encabezado-seccion">
+          <h2 id="titulo-especiales">Especiales</h2>
+          <p>Piezas para celebrar momentos inolvidables.</p>
+        </header>
+        <div class="contenedor-productos">
+          <article class="card">
+  <img src="img/Especiales/ACR.jpg"
+    alt="Anillo Etérea, el palacio de cristal"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Etérea, el palacio de cristal"</h3>
+  <p>Oro blanco de 18K con cuarzo de alta pureza (1.5 ct) en corte cristal de hielo. Incluye estuche acolchado celeste con iluminación LED.</p>
+  <p class="precio">S/ 800.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/CUERVO.jpg"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Nevermore-Poe"</h3>
+  <p>Diseño gótico en plata de ley 925 oscurecida y detalles en oro negro. Diamante negro sintético en talla marquesa (2.0 ct). Incluye cofre grabado de colección.</p>
+  <p class="precio">S/ 1000.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/GAT.jpg"
+    alt="Anillo La corona Estelar"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "La corona Estelar"</h3>
+  <p>Oro blanco de 14K con grabado artesanal de constelaciones y circonia corte brillante (1.2 ct). Presentado en caja musical tipo retablo victoriano.</p>
+  <p class="precio">S/ 900.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/SHERLOCK RING.jpg"
+    alt="Anillo Encontré el amor - Sherlock H."
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Encontré el amor – Sherlock H."</h3>
+  <p>Plata de ley 925 baño en platino, solitario central (1.0 ct) flanqueado por dos zafiros azules naturales en corte gota. Incluye cofre enigmático de piel.</p>
+  <p class="precio">S/ 1000.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/LIBRO.png"
+    alt="Anillo Pride and prejudice – Jane A."
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Pride and Prejudice – Jane A."</h3>
+  <p>Oro amarillo de 18K con elaborado trabajo de filigrana victoriana y diamante corte esmeralda central (1.5 ct). Presentado en cofre rígido con forma de libro antiguo encuadernado en piel.</p>
+  <p class="precio">S/ 1000.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/MAQ.jpg"
+    alt="Anillo Writer love-Gerusa Melk"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Writer Love – Gerusa Melk"</h3>
+  <p>Oro rosa de 14K con una espinela rosa suave corte cojín (1.2 ct). Incluye estuche coleccionable en forma de máquina de escribir vintage con grabado interior personalizado.</p>
+  <p class="precio">S/ 800.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/ORGULLO.jpeg"
+    alt="Anillo Pemberley soul - P&P"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Pemberley Soul – P&P"</h3>
+  <p>Oro rosa de 18K con rubí natural en corte gota (1.3 ct) y microengaste de circonias. Incluye estuche de cuero de lujo con cita grabada de la novela en pan de oro.</p>
+  <p class="precio">S/ 900.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+<article class="card">
+  <img src="img/Especiales/SHEHEREZADE.jpg"
+    alt="Anillo Sheherezade in love"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Anillo "Sheherezade in Love"</h3>
+  <p>Oro blanco de 18K con un brillante topacio azul turquesa en corte ovalado (2.0 ct). Acompañado de un cofre esférico de mármol blanco con incrustaciones doradas y turquesas.</p>
+  <p class="precio">S/ 1200.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+
+        </div>
+      </section>
+      <section id="giftcard" class="seccion" aria-labelledby="titulo-giftcard">
+        <header class="encabezado-seccion">
+          <h2 id="titulo-giftcard">GiftCard</h2>
+          <p>
+            Sorprende con un detalle eterno: nuestras GiftCards son la llave a
+            mundos literarios y mágicos.
+          </p>
+        </header>
+        <div class="giftcards">
+          <article class="card">
+  <img src="img/GIFTCARD/BRONCE.png"
+    alt="Giftcard Corazón de Bronce - CDC"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Giftcard "Corazón de Bronce"</h3>
+  <p>Tarjeta de regalo coleccionable en aleación de bronce con acabado cepillado. Incluye cofre de presentación en tono cobrizo con interior aterciopelado. Saldo canjeable.</p>
+  <p class="precio">S/ 53.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+          <article class="card">
+  <img src="img/GIFTCARD/PLATA.png"
+    alt="Giftcard Corazón de Plata - CDC"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Giftcard "Corazón de Plata"</h3>
+  <p>Tarjeta de regalo coleccionable en plata aleada con grabado láser de precisión. Presentada en elegante estuche de lujo color perla. Saldo canjeable.</p>
+  <p class="precio">S/ 103.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+  <article class="card">
+  <img src="img/GIFTCARD/ORO.png"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Giftcard "Corazón de Oro"</h3>
+  <p>Exclusiva tarjeta de regalo con baño en oro de alta durabilidad y detalles numerados. Empacada en cofre dorado con relieve literario. Saldo canjeable.</p>
+  <p class="precio">S/ 253.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+   <article class="card">
+  <img src="img/GIFTCARD/ÉBANO.png"
+    alt="Giftcard Corazón de Ébano - CDC"
+    class="producto-media"
+    style="width: 100%; object-fit: cover; border-radius: 1rem" />
+  <h3>Giftcard "Corazón de Ébano"</h3>
+  <p>Máxima categoría de regalo. Tarjeta en tono ébano oscuro con placa metálica contrastante. Presentada en un riguroso cofre negro de colección. Saldo canjeable.</p>
+  <p class="precio">S/ 303.00</p>
+  <button type="button" disabled>Comprar · próximamente</button>
+</article>
+        </div>
+        
+<section id="club" class="seccion club">
+  
+  <!-- COLUMNA IZQUIERDA: Textos, beneficios y el formulario -->
+  <div class="club-info">
+    <span class="subtitulo-club">CLUB DE LECTURA</span>
+    <h2>La sociedad del romance y la fantasía</h2>
+    <p>
+      Un refugio donde los corazones se encuentran con los sueños. Aquí, las páginas se convierten en puentes hacia mundos mágicos y cada historia, en una promesa de compañía.
+    </p>
+    <ul class="beneficios">
+      <li>Reuniones para compartir nuestras lecturas.</li>
+      <li>Selecciones y descuentos especiales para miembros.</li>
+      <li>Dinámicas de amigos por correspondencia.</li>
+    </ul>
+
+    <!-- Panel Rosado con el Formulario -->
+    <div class="panel-club" style="margin-top: 1.5rem; max-width: 100%;">
+      <h3>Únete a nuestra próxima historia</h3>
+      <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Inscríbete y sé parte de nuestras reuniones y lecturas:</p>
+      
+      <!-- Formulario con sus ID correctos para Firebase -->
+      <form id="form-club" style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.5rem;">
+        
+        <!-- Campo Nombre -->
+        <input 
+          type="text" 
+          id="club-nombre"
+          name="nombre_club" 
+          placeholder="Tu nombre completo" 
+          required 
+          style="padding: 0.65rem 1rem; border: 1px solid var(--rosa-claro); border-radius: 2rem; background: white; outline: none; font-size: 0.9rem; font-family: inherit;"
+        >
+
+        <!-- Campo Correo -->
+        <input 
+          type="email" 
+          id="club-email"
+          name="email_club" 
+          placeholder="Tu correo electrónico" 
+          required 
+          style="padding: 0.65rem 1rem; border: 1px solid var(--rosa-claro); border-radius: 2rem; background: white; outline: none; font-size: 0.9rem; font-family: inherit;"
+        >
+
+        <!-- Campo Fecha de Cumpleaños -->
+        <input 
+          type="date" 
+          id="club-cumple"
+          name="cumpleaños_club" 
+          required 
+          style="padding: 0.65rem 1rem; border: 1px solid var(--rosa-claro); border-radius: 2rem; background: white; outline: none; font-size: 0.9rem; font-family: inherit; color: #725261;"
+        >
+
+        <!-- Botón de Envío -->
+        <button 
+          type="submit" 
+          id="btn-enviar-club"
+          style="padding: 0.7rem 1.5rem; border: none; border-radius: 2rem; background: var(--acento); color: white; font-weight: 700; cursor: pointer; transition: opacity 0.3s ease; font-size: 0.9rem;"
+        >
+          ¡Inscribirme ahora!
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- COLUMNA DERECHA: Carrusel arriba y el Logo grande elegante abajo -->
+  <div class="club-lateral" style="display: flex; flex-direction: column; gap: 1.5rem; height: 100%; justify-content: space-between;">
+    
+    <!-- Carrusel compacto -->
+    <div id="carruselClubVertical" class="carousel slide carrusel-compacto" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/Carrusel02/Banner Sociedad..png" class="d-block w-100" alt="La Sociedad del Romance y la Fantasía">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Carrusel02/meet.jpg" class="d-block w-100" alt="Reuniones virtuales">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Carrusel02/amigos.jpg" class="d-block w-100" alt="Dinámica de amigos por correspondencia">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Carrusel02/descuento.jpg" class="d-block w-100" alt="Descuento en el libro del mes">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Carrusel02/regalitos.jpg" class="d-block w-100" alt="Regalitos para miembros">
+        </div>
+        <div class="carousel-item">
+          <img src="img/Carrusel02/cumpleaños.jpg" class="d-block w-100" alt="Obsequio por cumpleaños">
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo del Club Grande y Centrado usando la clase de CSS -->
+    <div class="contenedor-logo-club">
+      <img 
+        src="img/Carrusel02/Logo_SOCIEDAD SIN FONDO.png" 
+        alt="Logo Grande Club de Lectura" 
+        class="logo-club-grande"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+
+</section>
+    </main>
+    <footer id="contacto" class="pie-pagina">
+  <div class="contenedor pie-contenido">
+    <p>
+      Cosas del corazón &copy; 2026<br /><small
+        >Todos los derechos reservados.</small
+      >
+    </p>
+    <div>
+      <h2><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i>Ubícanos</h2>
+      <address>Calle Pumacurco 470, Cusco, Perú.</address>
+    </div>
+    <div>
+      <h2><i class="fa-solid fa-share-nodes" style="margin-right: 8px;"></i>Síguenos</h2>
+      <p>Redes sociales próximamente.</p>
+    </div>
+    <div>
+      <h2><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i>Contáctanos</h2>
+      <p>Canales de atención próximamente.</p>
+    </div>
+  </div>
+</footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="main.js"></script>
+  <dialog id="modal-imagen" class="modal-visor">
+  <button id="cerrar-modal" class="btn-cerrar">&times;</button>
+  <img id="imagen-ampliada" src="" alt="Imagen ampliada" />
+</dialog>
+<!-- Modal de Registro e Inicio de Sesión -->
+    <dialog id="modal-registro" class="modal-usuario">
+      <div class="contenido-modal-usuario">
+        <button id="cerrar-modal-registro" class="btn-cerrar-modal">&times;</button>
+        <h3>Mi Cuenta</h3>
+        <p>Ingresa o regístrate en Cosas del Corazón</p>
+        <form id="form-registro-usuario">
+          <input type="email" id="usuario-email" placeholder="Correo electrónico" required />
+          <input type="password" id="usuario-password" placeholder="Contraseña" required />
+          <button type="submit" id="btn-enviar-usuario">Ingresar / Registrarse</button>
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Modal Carrito de Compras -->
+    <dialog id="modal-carrito" class="modal-usuario">
+      <div class="contenido-modal-usuario">
+        <button id="cerrar-modal-carrito" class="btn-cerrar-modal">&times;</button>
+        <h3 style="color: #725261; margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-cart-shopping"></i> Carrito de Compras
+        </h3>
+        <p style="color: #888; font-size: 0.95rem; margin: 1.5rem 0;">
+          ¡No disponible por el momento! Estamos trabajando en esta funcionalidad para brindarte la mejor experiencia muy pronto. 💖
+        </p>
+        <button id="btn-entendido-carrito" style="padding: 0.7rem 1.5rem; border: none; border-radius: 2rem; background: #c27d91; color: white; font-weight: bold; cursor: pointer;">
+          Entendido
+        </button>
+      </div>
+    </dialog>
+
+  </body>
+</html>
